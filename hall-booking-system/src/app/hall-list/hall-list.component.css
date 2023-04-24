@@ -1,0 +1,11 @@
+.card-img-top{
+    width: 17.8rem;
+    height: 8rem;
+    border-radius: 3px;
+}
+
+.card{
+    border-color: black;
+    border-radius: 5px;
+    border: 2px solid black;
+}
