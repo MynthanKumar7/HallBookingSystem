@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataSharingService } from '../data-sharing.service';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  isLoggedIn:string = 'false';
+  constructor(private datasharing: DataSharingService) {
+    this.datasharing.LoggedIn.subscribe(value =>{
+      this.isLoggedIn = value;
+    });
+   }
 
   ngOnInit(): void {
   }

@@ -42,8 +42,8 @@ export class HeaderComponent implements OnInit {
   }
 
   Logout(){
-    this.router.navigate(['Home']);
     this.datasharing.LoggedIn.next('false');
+    this.router.navigate(['home']);
     this.toast.success("Logged Out", "You are successfully loggedout!",{
       timeOut: "5000",
       theme: "theme-2",

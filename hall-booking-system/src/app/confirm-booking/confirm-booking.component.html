@@ -1,4 +1,4 @@
-<form>
+<form *ngIf="Booked == 'false'">
     <h1 class="text-center text-primary">{{HallName}}</h1>
     <h3 class="text-center mb-3">BOOKING DETAILS <i class="bi bi-check-circle-fill"></i></h3>
     <div class="form-outline mb-4">
@@ -17,3 +17,6 @@
         <button type="button" class="btn btn-primary btn-block" (click)="Submit()">Confirm Booking</button>
     </div>
 </form>
+<div *ngIf="Booked == 'true'">
+    <h1 class="mt-4 mb-4 color-green">BOOKING CONFIRMED!<i class="bi bi-patch-check-fill"></i></h1>
+</div>
