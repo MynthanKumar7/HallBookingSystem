@@ -1,5 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { AngularToastService } from "angular-toasts";
+import { Router } from '@angular/router';
+import { DataSharingService } from '../data-sharing.service';
+
 
 @Component({
   selector: 'app-login',
@@ -9,11 +13,8 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   form:any;
-
-  @Input() error: string | null | undefined;
-  @Output() submitEM = new EventEmitter();
   
-  constructor() { }
+  constructor(private toast:AngularToastService, private router:Router, private datasharing:DataSharingService) { }
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -22,10 +23,16 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  submit() {
-    if (this.form.valid) {
-      this.submitEM.emit(this.form.value);
-    }
+  Submit() {
+    this.datasharing.LoggedIn.next('true');
+    this.datasharing.UserName.next('jan');
+    this.router.navigate(['halls']);
+    this.toast.success("Logged In!", "Logged in successfully!",{
+      timeOut: "5000",
+      theme: "theme-2",
+      hideCloseButton: "false",
+      hideImage: "false",
+    });
   }
 
 }

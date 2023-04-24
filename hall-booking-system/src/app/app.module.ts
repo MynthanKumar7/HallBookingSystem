@@ -11,6 +11,8 @@ import { HallListComponent } from './hall-list/hall-list.component';
 import { ConfirmBookingComponent } from './confirm-booking/confirm-booking.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AngularToastModule } from "angular-toasts";
 
 
 
@@ -23,12 +25,14 @@ import { RegisterComponent } from './register/register.component';
     HallListComponent,
     ConfirmBookingComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule,  
+    AngularToastModule  
   ],
   providers: [],
   bootstrap: [AppComponent]

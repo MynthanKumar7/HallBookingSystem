@@ -1,19 +1,19 @@
 <form>
-    <h1 class="text-center mb-4">BOOKING DETAILS <i class="bi bi-check-circle-fill"></i></h1>
+    <h1 class="text-center text-primary">{{HallName}}</h1>
+    <h3 class="text-center mb-3">BOOKING DETAILS <i class="bi bi-check-circle-fill"></i></h3>
     <div class="form-outline mb-4">
         <label class="text-center">USER NAME</label>
-        <input type="email" id="form2Example1" class="form-control" />
+        <input type="text" id="form2Example1" class="form-control" />
     </div>
     <div class="form-outline mb-4">
         <label class="text-center">EVENT NAME</label>
-        <input type="email" id="form2Example1" class="form-control" />
+        <input type="text" id="form2Example1" class="form-control" />
     </div>
     <div class="form-outline mb-4">
         <label class="text-center">DATE</label>
-        <input type="email" id="form2Example1" class="form-control" />
+        <input type="date" id="form2Example1" class="form-control" />
     </div>
-    
     <div class="text-center">
-        <button type="button" class="btn btn-primary btn-block mb-4">Confirm Booking</button>
+        <button type="button" class="btn btn-primary btn-block" (click)="Submit()">Confirm Booking</button>
     </div>
 </form>

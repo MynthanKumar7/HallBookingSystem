@@ -1,13 +1,14 @@
 <nav class="navbar navbar-dark bg-primary p-2">
     <div>
         <img class="header-img mx-2" src="assets/images/Mkce.jpg">
-        <a class="navbar-brand h1 mx-2"><b>HALL BOOKING SYSTEM</b></a>
+        <a class="navbar-brand h1 mx-2"><label class="title">HALL BOOKING SYSTEM</label></a>
     </div>
     <div>
-        <button type="button" class="btn btn-primary"><i class="bi bi-house"></i> Home</button>
-        <button type="button" class="btn btn-primary"><i class="bi bi-card-list"></i> Halls List</button>
-        <button type="button" class="btn btn-primary"><i class="bi bi-door-open"></i> Login</button>
-        <button type="button" class="btn btn-primary"> <i class="bi bi-r-circle-fill"></i> Register</button>       
-        <button type="button" class="btn btn-primary"><i class="bi bi-person-circle"></i> Account</button>
+        <button type="button" class="btn btn-primary" (click)="Home()"><i class="bi bi-house"></i> HOME</button>
+        <button *ngIf="isLoggedIn == 'true'" type="button" class="btn btn-primary" (click)="Halls()"><i class="bi bi-card-list"></i> HALLS</button>
+        <button *ngIf="isLoggedIn == 'false'" type="button" class="btn btn-primary" (click)="Login()"><i class="bi bi-door-open"></i> LOGIN</button>
+        <button *ngIf="isLoggedIn == 'false'" type="button" class="btn btn-primary" (click)="Register()"> <i class="bi bi-r-circle-fill"></i> REGISTER</button>       
+        <button *ngIf="isLoggedIn == 'true'" type="button" class="btn btn-primary"><i class="bi bi-person-circle"></i><b> Hi, {{UserName}}</b></button>
+        <button *ngIf="isLoggedIn == 'true'" type="button" class="btn btn-primary" (click)="Logout()"><i class="bi bi-box-arrow-right"></i> LOGOUT</button>
     </div>
 </nav>

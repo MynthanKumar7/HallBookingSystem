@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularToastService } from "angular-toasts";
+import { Router } from '@angular/router';
+import { DataSharingService } from '../data-sharing.service';
 
 @Component({
   selector: 'app-confirm-booking',
@@ -7,9 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfirmBookingComponent implements OnInit {
 
-  constructor() { }
+  HallName:string = '';
+  
+  constructor(private toast:AngularToastService, private router:Router, private datasharing: DataSharingService) { 
+    this.datasharing.HallName.subscribe(value =>{
+      this.HallName = value;
+    });
+  }
 
   ngOnInit(): void {
   }
 
+  Submit(){
+    this.router.navigate(['home']);
+    this.toast.success("Booking Confirmed", "Hall has been booked successfully!",{
+      timeOut: "5000",
+      theme: "theme-2",
+      hideCloseButton: "false",
+      hideImage: "false",
+    });
+  }
 }

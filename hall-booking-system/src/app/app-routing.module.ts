@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'hall-list', component: HallListComponent },
+  { path: 'halls', component: HallListComponent },
   { path: 'register', component: RegisterComponent },  
   { path: 'confirm-booking', component: ConfirmBookingComponent },
 ];
